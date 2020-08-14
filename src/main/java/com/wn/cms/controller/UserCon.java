@@ -1,6 +1,7 @@
 package com.wn.cms.controller;
 
 import com.wn.cms.pojo.User;
+import com.wn.cms.service.UserSer;
 import com.wn.cms.service.impl.UserSerImpl;
 import com.wn.cms.tools.MyMD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,16 +41,23 @@ public class UserCon {
     }
 
     @RequestMapping("/adduser")
-    public boolean addUser(User user) throws Exception {
-        System.out.println(user);
-        int i = userSer.addUser(user);
+    public boolean addUser(String username,String userpwd,String userpwd2,String role,String realname,String remark) throws Exception {
         boolean a=false;
-        if (i==1){
-            a=true;
+        if (userpwd.equals(userpwd2)){
+            String pwd = MyMD5Util.getEncryptedPwd(userpwd);
+            User user=new User(role,username,pwd,realname,remark);
+            System.out.println(user);
+            int i = userSer.addUser(user);
+            if (i==1){
+                a=true;
+            }else {
+                a=false;
+            }
         }else {
             a=false;
         }
-        return a;
+      return a;
     }
+
 }
 

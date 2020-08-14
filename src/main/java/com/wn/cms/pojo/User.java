@@ -18,4 +18,12 @@ public class User {
     private String realname;
     private String status = "1";
     private String userremark;
+
+    public User(String userrole, String username, String userpwd, String realname, String userremark) {
+        this.userrole = userrole;
+        this.username = username;
+        this.userpwd = userpwd;
+        this.realname = realname;
+        this.userremark = userremark;
+    }
 }
