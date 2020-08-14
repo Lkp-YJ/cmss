@@ -37,7 +37,7 @@ public class UserCon {
         if (a==1) {
             return 1;
         } else {
-            return 0;
+            return 20;
         }
     }
 
