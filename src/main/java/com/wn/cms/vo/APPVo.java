@@ -11,9 +11,9 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserVo<T> {
+public class APPVo<T> {
     private int code;
     private String msg;
     private long count;
-    private List<T> data;
+    private Object data;
 }

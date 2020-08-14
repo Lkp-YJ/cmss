@@ -17,7 +17,7 @@ public class UserCon {
     @RequestMapping("/login")
     public int login(String username, String userpwd) throws Exception {
         String pwd = MyMD5Util.getEncryptedPwd(userpwd);
-        List<User> users = userSer.findAll().getData();
+        List<User> users = (List<User>) userSer.findAll().getData();
         System.out.println(username + "\t\t" + pwd);
         int a = 0;
         for (User user : users) {
@@ -51,6 +51,5 @@ public class UserCon {
         }
         return a;
     }
-
 }
 
