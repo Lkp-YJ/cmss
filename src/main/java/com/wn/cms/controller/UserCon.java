@@ -1,7 +1,6 @@
 package com.wn.cms.controller;
 
 import com.wn.cms.pojo.User;
-import com.wn.cms.service.UserSer;
 import com.wn.cms.service.impl.UserSerImpl;
 import com.wn.cms.tools.MyMD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +52,5 @@ public class UserCon {
         return a;
     }
 
-    }
+}
 
